@@ -27,7 +27,6 @@ class QueueClass {
             System.out.println(this.queue[i]);
         }
     }
-
 }
 
 public class Queue {
