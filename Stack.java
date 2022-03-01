@@ -18,14 +18,14 @@ class Stack {
             return tempVar;
         } else {
             System.out.println("Stack is empty");
-            return -999999999;
+            return -99999999;
         }
     }
 
     void push(int value) {
         if (pointer < stackSize - 1) {
-            this.pointer++;
-            this.stack[pointer] = value;
+
+            this.stack[++this.pointer] = value;
         } else {
             System.out.println("Stack Full");
         }
