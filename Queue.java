@@ -11,7 +11,6 @@ class QueueClass {
     }
 
     void add(int value) {
-
         this.queue[this.high] = value;
         this.high++;
     }
