@@ -28,7 +28,7 @@ class Queue {
         } else if (this.high == this.low && this.low != -1) {
             this.low = -1;
             this.high = -1;
-            return this.queue[high];
+            return this.queue[low];
         } else if (this.high > this.low) {
             int temp = this.queue[this.low];
             this.low++;
@@ -52,7 +52,6 @@ class Queue {
         if (high != -1 && low != -1) {
             int[] tempQueue = new int[this.high - this.low + 1];
             int j = -1;
-            // System.out.println(this.high - this.low + 1);
             for (int i = this.low; i <= this.high; i++) {
                 tempQueue[++j] = this.queue[i];
             }
