@@ -50,4 +50,11 @@ class Stack {
         }
     }
 
+    int peek() {
+        if (this.pointer != -1) {
+            return this.stack[this.pointer];
+        }
+        return -99999999;
+    }
+
 }
