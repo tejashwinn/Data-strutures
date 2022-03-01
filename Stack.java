@@ -1,20 +1,25 @@
 
-class StackClass {
+class Stack {
 
-    int[] stack;
-    int pointer;
-    int stackSize;
+    private int[] stack;
+    private int pointer;
+    private int stackSize;
 
-    StackClass(int stackSize) {
+    Stack(int stackSize) {
         this.stack = new int[stackSize];
         this.pointer = -1;
         this.stackSize = stackSize;
     }
 
     int pop() {
-        int tempVar = this.stack[this.pointer];
-        this.pointer--;
-        return tempVar;
+        if (this.pointer != -1) {
+            int tempVar = this.stack[this.pointer];
+            this.pointer--;
+            return tempVar;
+        } else {
+            System.out.println("Stack is empty");
+            return -999999999;
+        }
     }
 
     void push(int value) {
@@ -32,20 +37,17 @@ class StackClass {
         }
         System.out.println("");
     }
-}
 
-public class Stack {
-    public static void main(String[] args) {
-
-        StackClass stack = new StackClass(5);
-        for (int i = 1; i < 6; i++) {
-            stack.push(i);
+    int[] returnStack() {
+        if (this.pointer == -1) {
+            return null;
+        } else {
+            int[] tempStack = new int[this.pointer + 1];
+            for (int i = 0; i <= this.pointer; i++) {
+                tempStack[i] = this.stack[i];
+            }
+            return tempStack;
         }
-        stack.printStack();
-        for (int i = 0; i < 4; i++) {
-            stack.pop();
-        }
-        stack.printStack();
-
     }
+
 }
