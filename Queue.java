@@ -10,7 +10,7 @@ class Queue {
         this.queueSize = queueSize;
     }
 
-    void add(int value) {
+    void enQueue(int value) {
         if (this.high < this.queueSize - 1) {
             this.queue[++this.high] = value;
             if (this.low == -1) {
@@ -22,10 +22,13 @@ class Queue {
     }
 
     int deQueue() {
-        if (this.high == this.low) {
+        if (this.low > this.high) {
+            System.out.println("Queue is Empty");
+            return -9999999;
+        } else if (this.high == this.low && this.low != -1) {
             this.low = -1;
             this.high = -1;
-            return -9999999;
+            return this.queue[high];
         } else if (this.high > this.low) {
             int temp = this.queue[this.low];
             this.low++;
